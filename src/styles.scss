@@ -1,0 +1,39 @@
+// Variables de color turquesa
+$turquesa: #40e0d0;
+$turquesa-oscuro: #20b2aa;
+$turquesa-claro: #afeeee;
+
+.bg-turquesa {
+  background-color: $turquesa !important;
+}
+
+.text-turquesa {
+  color: $turquesa !important;
+}
+
+.btn-turquesa {
+  background-color: $turquesa;
+  border-color: $turquesa;
+  color: white;
+  
+  &:hover {
+    background-color: $turquesa-oscuro;
+    border-color: $turquesa-oscuro;
+  }
+}
+
+.table-turquesa {
+  thead {
+    background-color: $turquesa;
+    color: white;
+  }
+  
+  tbody tr:hover {
+    background-color: $turquesa-claro;
+  }
+}
+
+.modal.show {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+}

@@ -12,10 +12,10 @@ export class PhotoService {
   constructor(private http: HttpClient) { }
 
   getPhotos(): Observable<Photo[]> {
-    return this.http.get<Photo[]>(`${this.apiUrl}?_limit=10`);
+    return this.http.get<Photo[]>(this.apiUrl);
   }
 
-  createPhoto(photo: Photo): Observable<Photo> {
+  addPhoto(photo: Photo): Observable<Photo> {
     return this.http.post<Photo>(this.apiUrl, photo);
   }
 

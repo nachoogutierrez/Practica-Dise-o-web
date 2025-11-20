@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { PhotoListComponent } from './components/photo-list/photo-list.component';
 
 @Component({
   selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
   standalone: true,
-   imports: [PhotoListComponent],
-  template: `<app-photo-list></app-photo-list>`
+  imports: [CommonModule, PhotoListComponent]
 })
 export class AppComponent {
-  title = 'parcial-desarrollo-web';
+  title = 'Gestor de Fotos';
 }

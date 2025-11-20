@@ -13,7 +13,7 @@ import { PhotoService } from '../../services/photo.service';
 })
 export class PhotoListComponent implements OnInit {
   photos: Photo[] = [];
-  newPhoto: Photo = { albumId: 1, id: 0, title: '', url: '', thumbnailUrl: '' };
+  newPhoto: Photo = new Photo(1, 0, '', '', '');
   selectedPhoto: Photo | null = null;
 
   constructor(private photoService: PhotoService) { }
@@ -54,10 +54,16 @@ export class PhotoListComponent implements OnInit {
   }
 
   selectPhotoForEdit(photo: Photo): void {
-    this.selectedPhoto = { ...photo };
+    this.selectedPhoto = new Photo(
+      photo.albumId,
+      photo.id,
+      photo.title,
+      photo.url,
+      photo.thumbnailUrl
+    );
   }
 
   private resetNewPhoto(): void {
-    this.newPhoto = { albumId: 1, id: 0, title: '', url: '', thumbnailUrl: '' };
+    this.newPhoto = new Photo(1, 0, '', '', '');
   }
 }
